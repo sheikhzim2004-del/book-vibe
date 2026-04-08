@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { BookContext } from '../../context/ContextProvider';
 
@@ -31,7 +31,7 @@ const BookDetails = () => {
   } = expectedBook;
 
   
-  const {handleMarkAsRead} =useContext(BookContext)
+  const {handleMarkAsRead, handleWishList} =useContext(BookContext)
 
  
 
@@ -76,11 +76,16 @@ const BookDetails = () => {
         </div>
 
         <div className="card-actions">
+
           <button 
-          className="btn"
+          className="btn btn-info btn-soft"
           onClick={() => handleMarkAsRead(expectedBook)}
           >Mark as Read</button>
-          <button className="btn btn-accent"> Add to WishList</button>
+
+          <button 
+          className="btn btn-primary"
+          onClick={() => (handleWishList(expectedBook))}
+          > Add to WishList</button>
         </div>
       </div>
     </div>

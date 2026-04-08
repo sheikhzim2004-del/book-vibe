@@ -4,11 +4,12 @@ import { BookContext } from '../../context/ContextProvider';
 const Books = () => {
 
 
-    const {storedBooks} =useContext(BookContext)
-    console.log(storedBooks)
+    const {storedBooks, wishList} =useContext(BookContext)
+    console.log(storedBooks, wishList, 'read and wish')
   return (
     <div>
-      <p>Books Page</p>
+      <p>read lish: {storedBooks.length}</p>
+      <p>wish lish: {wishList.length}</p>
     </div>
   );
 };
