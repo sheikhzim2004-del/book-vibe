@@ -1,12 +1,13 @@
 import React, { use } from 'react';
-import BookCard from '../../components/ui/bookCard';
+import BookCard from '../../components/ui/BookCard';
+
 
 
 
 const AllBooks = ({ booksPromise }) => {
 
     const books = use(booksPromise)
-    console.log(books)
+    // console.log(books)
 
     return (
         <div className='my-12 container mx-auto'>
